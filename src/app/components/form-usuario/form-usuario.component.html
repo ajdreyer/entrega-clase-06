@@ -1,0 +1,62 @@
+@if(visible){
+    <form #formUsuario [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)" class="row g-3">
+        <div class="col-md-6">
+          <label for="firtName" class="form-label">Firt Name</label>
+          <input type="text" 
+                 formControlName="firstName" 
+                 class="form-control" 
+                 id="firtName" 
+                 [class.is-valid] = "firstNameControl?.valid"
+                 [class.is-invalid] = "firstNameControl?.touched && firstNameControl?.invalid"
+                 formControlName="firstName">
+           <div class="invalid-feedback">{{firstNameControl?.errors | json}}</div>
+        </div>
+        <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" 
+                   formControlName="lastName" 
+                   class="form-control" 
+                   id="lastName" 
+                   [class.is-valid] = "lastNameControl?.valid"
+                   [class.is-invalid] = "lastNameControl?.touched && lastNameControl?.invalid"
+                   formControlName="lastName">
+            <div class="invalid-feedback">{{lastNameControl?.errors | json}}</div>
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" 
+                   formControlName="email" 
+                   class="form-control" 
+                   id="email" 
+                   [class.is-valid] = "emailControl?.valid"
+                   [class.is-invalid] = "emailControl?.touched && emailControl?.invalid"
+                   formControlName="email">
+            <div class="invalid-feedback">{{emailControl?.errors | json}}</div>
+        </div>
+        <div class="col-md-6">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" 
+                   formControlName="age" 
+                   class="form-control" 
+                   id="age" 
+                   [class.is-valid] = "ageControl?.valid"
+                   [class.is-invalid] = "ageControl?.touched && ageControl?.invalid"
+                   formControlName="age">
+            <div class="invalid-feedback">{{ageControl?.errors | json}}</div>
+        </div>
+        <div class="col-md-6">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" 
+                   formControlName="address" 
+                   class="form-control" 
+                   id="address" 
+                   [class.is-valid] = "addressControl?.valid"
+                   [class.is-invalid] = "addressControl?.touched && addressControl?.invalid"
+                   formControlName="address">
+            <div class="invalid-feedback">{{addressControl?.errors | json}}</div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+}

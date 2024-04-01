@@ -1,0 +1,29 @@
+@if(visible)
+{
+    <div class="col-md-9">
+        <table #myList class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Firt Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (usuario of usuarios; track $index) {
+                    <tr>
+                        <th scope="row">{{$index}}</th>
+                        <th>{{usuario.firstName}}</th>
+                        <th>{{usuario.lastName}}</th>
+                        <th>{{usuario.address}}</th>
+                        <th>{{usuario.age}}</th>
+                        <th>{{usuario.email}}</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
